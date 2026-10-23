@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livraria Digital</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="topo">
+      <h1>Livraria Digital</h1>
+      <p>Encontre sua próxima leitura favorita!</p>
+    </header>
+
+    <main class="container">
+      <section class="busca">
+        <input
+          type="search"
+          id="pesquisa"
+          placeholder="Pesquisar por livro ou autor..."
+        />
+      </section>
+
+      <nav class="filtros">
+        <button class="filtro ativo" data-categoria="Todos">Todos</button>
+        <button class="filtro" data-categoria="Fantasia">Fantasia</button>
+        <button class="filtro" data-categoria="Romance">Romance</button>
+        <button class="filtro" data-categoria="Tecnologia">Tecnologia</button>
+        <button class="filtro" data-categoria="Terror">Terror</button>
+        <button class="filtro" data-categoria="Psicologia">Psicologia</button>
+        <button class="filtro" data-categoria="Religioso">Religioso</button>
+      </nav>
+
+      <h2>Nossos livros</h2>
+      <p id="contador">Carregando livros...</p>
+
+      <section id="catalogo" class="catalogo"></section>
+
+      <section class="carrinho">
+        <h2>Meu carrinho</h2>
+        <div id="itens-carrinho"></div>
+
+        <p class="total">Total: <span id="total-carrinho">R$ 0,00</span></p>
+
+        <button id="limpar-carrinho" class="botao-limpar">
+          Limpar carrinho
+        </button>
+
+        <button id="finalizar-compra" class="botao-finalizar">
+          Finalizar compra
+        </button>
+      </section>
+    </main>
+
+    <dialog id="checkout">
+      
+<button id="fechar-checkout" class="fechar">✕</button>
+<h2>Finalizar compra</h2>
+
+<form id="form-checkout">
+  <label for="nome">Nome completo</label>
+  <input id="nome" name="nome" required>
+
+  <label for="email">E-mail</label>
+  <input id="email" name="email" type="email" required>
+
+  <h3>Forma de pagamento</h3>
+
+  <label class="opcao-pagamento">
+    <input type="radio" name="metodo" value="pix" required>
+    <span> Pix com QR Code</span>
+  </label>
+
+  <label class="opcao-pagamento">
+    <input type="radio" name="metodo" value="credito">
+    <span> Cartão de crédito</span>
+    <div id="detalhes-cartao">
+    <label for="parcelas">Escolha as parcelas:</label>
+  
+    <select id="parcelas">
+      <option value="1">1x sem juros</option>
+      <option value="2">2x</option>
+      <option value="3">3x</option>
+      <option value="4">4x</option>
+      <option value="5">5x</option>
+      <option value="6">6x</option>
+      <option value="10">10x</option>
+      <option value="12">12x</option>
+    </select>
+  
+    <div class="resumo-parcelas">
+      <p>Valor da compra: <strong id="total-compra">R$ 0,00</strong></p>
+      <p>Juros: <strong id="valor-juros">R$ 0,00</strong></p>
+      <p>Total com juros: <strong id="total-com-juros">R$ 0,00</strong></p>
+      <p id="valor-parcela">Valor por parcela: R$ 0,00</p>
+    </div>
+  </div>
+
+  </label>
+
+  <div id="detalhes-pagamento"></div>
+  <div id="resumo-checkout"></div>
+
+  <button type="submit" class="botao-finalizar">
+    Confirmar pedido
+  </button>
+</form>
+ </dialog>
+
+    <footer>
+      <p>Livraria Digital • Projeto acadêmico de ADS</p>
+    </footer>
+  </body>
+</html>
